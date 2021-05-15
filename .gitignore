@@ -1,0 +1,8 @@
+/target
+.idea/
+*.jpg
+*.png
+*.jpeg
+basic.glade
+Cargo.lock
+*~
