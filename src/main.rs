@@ -19,7 +19,7 @@ https://www.reddit.com/r/rust/comments/hr0wmc/gtkrs_gladis_easily_import_gladege
 https://stackoverflow.com/questions/10355779/how-to-catch-gtk-scroll-event-on-menu-item
 https://stackoverflow.com/questions/9852359/how-to-drag-images-with-pygtk
 http://www.kcjengr.com/programing/2017/10/16/dragable-gtk-widgets.html
-
+https://www.youtube.com/watch?v=u4YoV-hHu-k
 */
 
 const SUPPORTED_FORMATS: [&str; 7] = ["bmp", "png", "gif", "jpg", "jpeg", "tif", "tiff"];
