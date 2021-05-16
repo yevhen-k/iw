@@ -139,7 +139,10 @@ impl Controller {
                         return Inhibit::default();
                     }
 
-                    let pixbuff = (&*image).get_pixbuf().unwrap();
+                    let pixbuff = match (&*image).get_pixbuf() {
+                        Some(pb) => pb,
+                        None => return Inhibit::default(),
+                    };
                     let width = pixbuff.get_width();
                     let height = pixbuff.get_height();
 
@@ -165,7 +168,10 @@ impl Controller {
                     let mut curr_scale = curr_scale_for_scroll_event.borrow_mut();
                     *curr_scale = *curr_scale - *scale_factor_for_scroll_event.borrow();
 
-                    let pixbuff = (&*image).get_pixbuf().unwrap();
+                    let pixbuff = match (&*image).get_pixbuf() {
+                        Some(pb) => pb,
+                        None => return Inhibit::default(),
+                    };
                     let width = pixbuff.get_width();
                     let height = pixbuff.get_height();
 
