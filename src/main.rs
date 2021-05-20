@@ -1,13 +1,11 @@
 mod image_handler;
 
-use gdk;
 use gtk;
-use gtk::prelude::{BuilderExtManual, GtkWindowExt, WidgetExtManual};
-use gtk::{ButtonExt, DialogExt, ImageExt, WidgetExt, ScrolledWindow, Inhibit};
+use gtk::prelude::{BuilderExtManual, GtkWindowExt};
+use gtk::WidgetExt;
 use std::env;
 use std::fs::read_to_string;
 use std::path::{Path, PathBuf};
-use gdk::ScrollDirection;
 use crate::image_handler::{ImageSet, Controller};
 
 /*

@@ -1,13 +1,12 @@
 use crate::image_handler::ImageSet;
 use gtk;
-use gtk::prelude::{BuilderExtManual, GtkWindowExt, Inhibit, WidgetExtManual, LayoutExt};
-use gtk::{ButtonExt, DialogExt, ImageExt, WidgetExt, ContainerExt};
-use gdk::{ScrollDirection, EventType};
+use gtk::prelude::{GtkWindowExt, Inhibit, WidgetExtManual, LayoutExt};
+use gtk::{ImageExt, WidgetExt, ContainerExt};
+use gdk::{ScrollDirection};
 use std::path::{PathBuf};
 use gdk_pixbuf::InterpType;
 use std::rc::Rc;
 use std::cell::RefCell;
-use std::cmp::max;
 
 const LEFT_KEY: u16 = 113;
 const RIGHT_KEY: u16 = 114;
