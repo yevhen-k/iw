@@ -12,12 +12,18 @@ There are no purpose to create fully featured application at the moment.
 
 - [x] open image in command line
 - [x] `<Left>` and `<Right>` arrow keys to navigate to the previous and next image in a folder
-- [x] `<ScrollUP>` and `<ScrollDown>` mouse events to increase and decrease image scale
+- [ ] implement scroll event for image scaling
+	- [x] `<ScrollUP>` and `<ScrollDown>` mouse events to increase and decrease image scale
+	- [ ] "smart" scaling (center of scaling is under the mouse pointer)
 - [x] positioning of an image at the center of the window while
 	- [x] scroll
 	- [x] `<Left>`/`<Right>` key press
 	- [x] window resize
-- [ ] drag upscaled image
-- [ ] set max width and hight of the window for images with big resolution
+- [ ] implement image drag
+    - [x] implement basic drag
+	- [x] drag upscaled/downscaled image
+	- [ ] keep image borders inside window while dragging
+	- [ ] keep position of dragged image while scrolling
+- [ ] set max width and height of the window for images with big resolution
 - [ ] set application icon
 
