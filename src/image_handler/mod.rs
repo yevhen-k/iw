@@ -1,4 +1,4 @@
-pub mod image_set;
 pub mod controller;
-pub use self::image_set::ImageSet;
+pub mod image_set;
 pub use self::controller::Controller;
+pub use self::image_set::ImageSet;

@@ -1,12 +1,12 @@
 mod image_handler;
 
+use crate::image_handler::{Controller, ImageSet};
 use gtk;
 use gtk::prelude::{BuilderExtManual, GtkWindowExt};
 use gtk::WidgetExt;
 use std::env;
 use std::fs::read_to_string;
 use std::path::{Path, PathBuf};
-use crate::image_handler::{ImageSet, Controller};
 
 /*
 https://gtk-rs.org/docs-src/tutorial/glade
@@ -47,7 +47,6 @@ const SUPPORTED_FORMATS: [&str; 7] = ["bmp", "png", "gif", "jpg", "jpeg", "tif",
 //
 //     gtk::main();
 // }
-
 
 fn main() {
     let args: Vec<String> = env::args().collect();
