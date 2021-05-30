@@ -21,8 +21,8 @@ There are no purpose to create fully featured application at the moment.
 	- [x] window resize
 - [ ] implement image drag
     - [x] implement basic drag
-	- [x] drag upscaled/downscaled image
-	- [ ] keep image borders inside window while dragging
+	- [x] drag upscaled image
+	- [x] keep image borders inside window while dragging
 	- [ ] keep position of dragged image while scrolling
 - [ ] set max width and height of the window for images with big resolution
 - [ ] set application icon
