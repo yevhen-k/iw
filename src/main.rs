@@ -1,6 +1,7 @@
 mod image_handler;
 
 use crate::image_handler::{Controller, ImageSet};
+use gdk_pixbuf::{PixbufLoader, PixbufLoaderExt};
 use gtk;
 use gtk::prelude::{BuilderExtManual, GtkWindowExt};
 use gtk::WidgetExt;
@@ -83,6 +84,15 @@ fn main() {
     let builder = gtk::Builder::from_string(glade_src.as_str());
 
     let window: gtk::Window = builder.get_object("window").unwrap();
+    let icon_data = include_bytes!("./favicon.ico");
+    let pixbuf_loader = PixbufLoader::new();
+    if pixbuf_loader.write(icon_data).is_ok() {
+        if let Some(icon) = pixbuf_loader.get_pixbuf() {
+            window.set_icon(Some(&icon));
+        }
+    }
+    pixbuf_loader.close().is_ok();
+
     let image: gtk::Image = builder.get_object("image").unwrap();
     let layout: gtk::Layout = builder.get_object("layout").unwrap();
 

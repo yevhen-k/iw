@@ -24,6 +24,7 @@ There are no purpose to create fully featured application at the moment.
 	- [x] drag upscaled image
 	- [x] keep image borders inside window while dragging
 	- [ ] keep position of dragged image while scrolling
+- [ ] double click to fit image into widow
 - [ ] set max width and height of the window for images with big resolution
-- [ ] set application icon
-
+- [x] set application icon
+- [ ] massive refactoring :)
