@@ -276,6 +276,9 @@ impl Controller {
                 // println!("event {:?}", (x_event, y_event));
                 // println!("root {:?}", (x_root, y_root));
 
+                let w_width = window.get_allocated_width();
+                let w_height = window.get_allocated_height();
+
                 let x = layout_xy.borrow()[0];
                 let y = layout_xy.borrow()[1];
                 let pb = image.get_pixbuf().unwrap();
@@ -285,10 +288,27 @@ impl Controller {
                 let y_shift = y + (y_event as i32 - click_pos.borrow()[1]);
                 // println!("layout {:?}", (x, y));
 
-                if *drag.borrow() {
+                // drag only if image is bigger than window
+                if *drag.borrow() && (w_width < w || w_height < h) {
                     println!("layout {:?}", (x, y));
                     println!("event {:?}", (x_event, y_event));
                     println!("shift {:?}", (x_shift, y_shift));
+
+                    // keep image inside window border
+                    let x_shift = if (-(w - w_width) <= x_shift) && (x_shift <= 0) {
+                        x_shift
+                    } else if x_shift > 0 {
+                        0
+                    } else {
+                        -(w - w_width)
+                    };
+                    let y_shift = if (-(h - w_height) <= y_shift) && (y_shift <= 0) {
+                        y_shift
+                    } else if y_shift > 0 {
+                        0
+                    } else {
+                        -(h - w_height)
+                    };
 
                     &layout.set_child_x(&image.clone().as_ref().to_owned(), x_shift);
                     &layout.set_child_y(&image.clone().as_ref().to_owned(), y_shift);
